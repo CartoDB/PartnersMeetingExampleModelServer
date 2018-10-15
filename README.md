@@ -1,35 +1,27 @@
-# An experimental API to add analysis to Sales Force
+# A sample server for serving a model
 
-For now target analysis aim to include :
 
-1) Balance Sales Teritories
-2) Vehicle Routing
 
 ### Installation
 
 ```bash
-git clone https://github.com/CartoDB/sales_quest_research_api.git
+git clone https://github.com/CartoDB/PartnersMeetingExampleModelServer.git
 ```
 
 ### Build & Launch
 
 ```bash
-docker-compose up -d --build
+docker-compose up
 ```
 
-To add more workers:
+### Endpoint
 
-To add more workers:
-```bash
-docker-compose up -d --scale worker=5 --no-recreate
-```
+/predict
 
-To shut down:
+Takes arguments :
 
-```bash
-docker-compose down
-```
+- username: The username of the account
+- apikey: The API Key of the account
+- input\_table: The table with the target locations we want to predict on
+_ output\_table: Where we want the resutls to be stored.
 
----
-
-adapted from [https://github.com/itsrifat/flask-celery-docker-scale](https://github.com/itsrifat/flask-celery-docker-scale)
